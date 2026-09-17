@@ -1,4 +1,4 @@
-"""YOLO11 Detection Module - Person detection for SIH Part 1."""
+"""YOLO11 Detection Module - Person detection for MONETIZE."""
 
 from pathlib import Path
 from typing import Any

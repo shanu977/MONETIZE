@@ -106,7 +106,7 @@ export default function LiveCCTV() {
       refreshStatus()
     }, 2000)
     return () => clearInterval(interval)
-  }
+  }, [])
 
   const refreshStatus = async () => {
     try {
@@ -183,7 +183,7 @@ export default function LiveCCTV() {
   const getStatusColor = () => {
     if (!status?.status) return "bg-slate-100 text-slate-800"
     
-    return statusColors[status.status] || statusColors.NOT_CONFIGURED
+    return (statusColors as Record<string, string>)[status.status] || statusColors.NOT_CONFIGURED
   }
 
   const getConnectionButtonText = () => {
@@ -373,7 +373,7 @@ export default function LiveCCTV() {
           />
         ) : (
           <video 
-            src={videoSrc} 
+            src={videoSrc ?? undefined} 
             controls 
             autoPlay 
             muted 

@@ -1,4 +1,4 @@
-"""Main Application Entry Point - SIH Part 1 Automatic Customer Tracking."""
+"""Main Application Entry Point - MONETIZE Automatic Customer Tracking."""
 
 import sys
 from pathlib import Path
@@ -87,7 +87,7 @@ class CustomerTrackerApp:
     def initialize(self) -> bool:
         """Initialize all components."""
         LOGGER.info("=" * 50)
-        LOGGER.info("SIH Part 1 - Automatic Customer Tracking")
+        LOGGER.info("MONETIZE - Automatic Customer Tracking")
         LOGGER.info("=" * 50)
 
         LOGGER.info("Initializing detector...")
@@ -382,7 +382,7 @@ class CustomerTrackerApp:
         avg_inference_time = sum(self.inference_times) / len(self.inference_times) * 1000 if self.inference_times else 0
 
         LOGGER.info("=" * 50)
-        LOGGER.info("PART 1 PERFORMANCE STATISTICS")
+        LOGGER.info("MONETIZE PERFORMANCE STATISTICS")
         LOGGER.info("=" * 50)
         LOGGER.info(f"Total runtime: {total_time:.1f} seconds")
         LOGGER.info(f"Camera frames captured: {self.camera_frame_count}")
@@ -417,7 +417,7 @@ def main():
     """Entry point."""
     import argparse
 
-    parser = argparse.ArgumentParser(description="SIH Part 1 - Automatic Customer Tracking (+ Phase 2 Zone Integration)")
+    parser = argparse.ArgumentParser(description="MONETIZE - Automatic Customer Tracking (+ Zone Integration)")
     parser.add_argument("--source", type=str, default=str(SOURCE),
                        help="Video source (0 for webcam, or path to video file)")
     parser.add_argument("--inference-fps", type=float, default=INFERENCE_FPS,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Retail AI Admin Dashboard — Single-command launcher.
+"""MONETIZE Admin Dashboard — Single-command launcher.
 
 Starts FastAPI backend (CCTV + Zones + Customers + Mock APIs) and serves
 the Vite-built frontend at http://127.0.0.1:8000
@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 def main():
-    parser = argparse.ArgumentParser(description="Retail AI Admin Dashboard")
+    parser = argparse.ArgumentParser(description="MONETIZE Admin Dashboard")
     parser.add_argument("--host", default="127.0.0.1", help="Host")
     parser.add_argument("--port", type=int, default=8000, help="Port")
     parser.add_argument("--reload", action="store_true", help="Auto-reload for dev")
@@ -30,7 +30,7 @@ def main():
 
     print(f"""
 ╔════════════════════════════════════════════════════╗
-║  RETAIL AI — Admin Dashboard                       ║
+║  MONETIZE — Admin Dashboard                        ║
 ║  http://{args.host}:{args.port}/                            ║
 ║                                                    ║
 ║  API docs: http://{args.host}:{args.port}/docs                ║

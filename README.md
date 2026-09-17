@@ -1,14 +1,14 @@
-# SIH Part 1 — Automatic Customer Detection & Tracking
+# MONETIZE — Automatic Customer Detection & Tracking
 
-> **Intelligent Retail Analytics System — Part 1**
+> **MONETIZE — Intelligent Retail Analytics**
 >
 > Camera → YOLO11 → Person Detection → ByteTrack → Anonymous Customer IDs → Bounding Box + Center Coordinates → Tracking Data
 
 ## Overview
 
-Part 1 of the SIH Intelligent Retail Analytics System provides **automatic multi-person detection and tracking** from camera/video input. Every visible person receives a persistent tracking ID (`Customer_001`, `Customer_002`, etc.) with bounding boxes, center coordinates, and timestamps.
+MONETIZE Intelligent Retail Analytics provides **automatic multi-person detection and tracking** from camera/video input. Every visible person receives a persistent tracking ID (`Customer_001`, `Customer_002`, etc.) with bounding boxes, center coordinates, and timestamps.
 
-This output is designed to be consumed by **Part 2 (Zone System)** without modification.
+This output is designed to be consumed by **Zone System** without modification.
 
 ---
 
@@ -27,7 +27,7 @@ Customer_001, Customer_002, ...
     ↓
 BBox + Center + Timestamp
     ↓
-Tracking Data → Part 2
+Tracking Data → Zone System
 ```
 
 ---
@@ -42,7 +42,7 @@ Tracking Data → Part 2
 - **Configurable FPS** — Frame sampling for CPU-friendly processing
 - **Webcam & video file support** — Switch via config or CLI
 - **Real-time visualization** — Bounding boxes, IDs, center points, FPS
-- **Part 2 ready** — Clean `get_tracked_customers()` compatible output
+- **Zone System ready** — Clean `get_tracked_customers()` compatible output
 
 ---
 
@@ -50,7 +50,7 @@ Tracking Data → Part 2
 
 ```bash
 # Navigate to project directory
-cd "%USERPROFILE%\Downloads\SIH live project"
+cd MONETIZE
 
 # Create virtual environment
 python -m venv .venv
@@ -131,7 +131,7 @@ INFERENCE_FPS = 6  # Set 0 for unlimited
 # Display
 SHOW_FPS = True
 SHOW_CONF = False
-WINDOW_NAME = "SIH Part 1 - Automatic Customer Tracking"
+WINDOW_NAME = "MONETIZE - Automatic Customer Tracking"
 
 # Output
 SAVE_VIDEO = False
@@ -156,7 +156,7 @@ Each tracked customer produces:
 }
 ```
 
-### Part 2 Compatible Format
+### Zone System Compatible Format
 ```python
 [
     {
@@ -181,7 +181,7 @@ video, sampler = create_video_source(0)
 success, frame = video.get_frame()
 if success:
     result = detector.detect_and_track(frame)
-    customers = result.to_list()  # Part 2 compatible
+    customers = result.to_list()  # Zone System compatible
     for customer in customers:
         print(customer["customer_id"], customer["center"])
 ```
@@ -191,7 +191,7 @@ if success:
 ## Project Structure
 
 ```
-SIH live project/
+MONETIZE/
 │
 ├── README.md
 ├── requirements.txt
@@ -298,9 +298,9 @@ Run the application and verify:
 
 ---
 
-## Next Step: Part 2 — Zone System
+## Next Step: Zone System
 
-Part 2 will consume the tracking output from Part 1 to implement:
+Zone System will consume the tracking output from MONETIZE to implement:
 
 - Zone definition (polygons/rectangles)
 - Zone entry/exit detection
@@ -310,7 +310,7 @@ Part 2 will consume the tracking output from Part 1 to implement:
 
 The interface will be:
 ```python
-# Part 2 usage
+# Zone System usage
 from app.detection.detector import get_detector
 
 detector = get_detector()
@@ -322,5 +322,4 @@ customers = result.to_part2_format()  # Ready for zone processing
 
 ## License
 
-SIH Project — Educational/Prototype Use#   S I H  
- 
+MONETIZE — Proprietary Product. All rights reserved.

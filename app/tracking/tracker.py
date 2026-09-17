@@ -37,7 +37,7 @@ class ByteTrackWrapper:
     def _regenerate_config(self) -> None:
         """Regenerate config file with current settings."""
         lines = [
-            "# ByteTrack configuration for SIH Part 1",
+            "# ByteTrack configuration for MONETIZE",
             "tracker_type: bytetrack",
         ]
         for key, value in self.defaults.items():

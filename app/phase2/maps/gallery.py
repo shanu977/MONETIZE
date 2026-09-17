@@ -36,7 +36,7 @@ class GalleryApp:
     def __init__(self, maps_dir: str | Path | None = None):
         self.manager = get_map_manager(maps_dir)
         self.root = tk.Tk()
-        self.root.title("Bird's-Eye Maps — SIH Retail Analytics")
+        self.root.title("Bird's-Eye Maps — MONETIZE Retail Analytics")
         self.root.configure(bg=BG)
         self.root.geometry("1000x700")
         self.root.minsize(850, 600)

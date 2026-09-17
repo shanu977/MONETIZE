@@ -1,4 +1,4 @@
-"""Configuration settings for SIH Part 1 - Automatic Customer Detection & Tracking."""
+"""Configuration settings for MONETIZE - Automatic Customer Detection & Tracking."""
 
 from pathlib import Path
 from enum import Enum
@@ -39,7 +39,7 @@ SAVE_VIDEO = False
 
 VIDEO_OUTPUT_PATH = str(PROJECT_ROOT / "output" / "tracking_output.avi")
 
-WINDOW_NAME = "SIH Part 1 - Automatic Customer Tracking"
+WINDOW_NAME = "MONETIZE - Automatic Customer Tracking"
 
 ENABLE_GPU = False
 
@@ -56,7 +56,7 @@ TRACKER_DEFAULTS = {
     "frame_rate": 30,
 }
 
-BYTE_TRACK_CONFIG_CONTENT = """# ByteTrack configuration for SIH Part 1
+BYTE_TRACK_CONFIG_CONTENT = """# ByteTrack configuration for MONETIZE
 tracker_type: bytetrack
 track_high_thresh: 0.5
 new_track_thresh: 0.5

@@ -18,7 +18,7 @@ export default function Sidebar({ collapsed, onToggle }: { collapsed?: boolean; 
     <aside className={`${collapsed ? "w-[72px]" : "w-[260px]"} shrink-0 bg-[#0f172a] text-slate-200 flex flex-col transition-all duration-200`}>
       <div className="h-[64px] flex items-center gap-3 px-5 border-b border-white/10">
         <div className="w-8 h-8 rounded-lg bg-white text-[#0f172a] grid place-items-center font-bold text-[13px]">AI</div>
-        {!collapsed && <div><div className="font-semibold tracking-wide text-sm">RETAIL AI</div><div className="text-[11px] text-slate-400 -mt-1">Intelligence</div></div>}
+        {!collapsed && <div><div className="font-semibold tracking-wide text-sm">MONETIZE</div><div className="text-[11px] text-slate-400 -mt-1">Retail Intelligence</div></div>}
       </div>
 
       <nav className="flex-1 py-4 px-2 space-y-1 overflow-y-auto">

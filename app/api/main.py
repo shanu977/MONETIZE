@@ -1,4 +1,4 @@
-"""FastAPI backend for Retail AI Admin Dashboard.
+"""FastAPI backend for MONETIZE Admin Dashboard.
 
 Serves:
 - CCTV stream (MJPEG) from test 1.mp4 (future RTSP)
@@ -36,7 +36,7 @@ from fastapi import UploadFile, File, Form
 import shutil
 import uuid
 
-app = FastAPI(title="Retail AI Admin API", version="2.5A")
+app = FastAPI(title="MONETIZE Admin API", version="2.5A")
 
 app.add_middleware(
     CORSMiddleware,
@@ -718,4 +718,4 @@ else:
     # Fallback for dev: serve a simple message
     @app.get("/")
     def root():
-        return {"message": "Retail AI Admin API — Frontend not built. Run: cd dashboard && npm run build"}
+        return {"message": "MONETIZE Admin API — Frontend not built. Run: cd dashboard && npm run build"}

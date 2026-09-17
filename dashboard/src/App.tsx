@@ -19,7 +19,7 @@ function Layout() {
       <div className="flex-1 min-w-0 flex flex-col">
         {/* Mobile header */}
         <div className="lg:hidden h-12 bg-white border-b flex items-center px-4 justify-between">
-          <span className="font-semibold">RETAIL AI</span>
+          <span className="font-semibold">MONETIZE</span>
           <button onClick={() => setCollapsed(!collapsed)} className="p-2 rounded-lg border">≡</button>
         </div>
         <main className="flex-1 p-4 lg:p-6 max-w-[1280px] w-full mx-auto">
