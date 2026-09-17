@@ -944,6 +944,29 @@ def get_active_camera_info() -> dict:
     except Exception:
         pass
 
+    # Fallback: if background Demo pipeline is running, expose DEMO
+    # even when .demo_state.json has not been toggled yet. This ensures
+    # the dashboard shows the live Demo video immediately after startup.
+    try:
+        runtime = get_runtime_status()
+        if runtime.get("running"):
+            return {
+                "id": DEFAULT_CAMERA_ID,
+                "name": "Demo Camera",
+                "source_type": "demo",
+                "source": DEMO_VIDEO_NAME,
+                "status": "DEMO",
+                "mode": "DEMO",
+                "fps": TARGET_INFERENCE_FPS,
+                "inference_fps": runtime.get("inference_fps", 0.0),
+                "resolution": runtime.get("resolution") or [848, 478],
+                "connected": True,
+                "customer_count": runtime.get("customer_count", 0),
+                "map_id": runtime.get("map_id"),
+            }
+    except Exception:
+        pass
+
     # Normal configured camera.
     cid = get_active_camera_id()
 

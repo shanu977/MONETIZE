@@ -170,7 +170,7 @@ def _enrich_zones_for_map(map_id: str, map_name: str = "") -> dict:
             "status": "Busy" if occ >= 5 else ("Active" if occ > 0 else "Normal"),
             "entries": stat.total_entries if stat else 0,
             "exits": stat.total_exits if stat else 0,
-            "avg_dwell_time": stat.avg_dwell_time if stat else 0.0,
+            "avg_dwell_time": getattr(stat, "average_dwell_seconds", 0.0) if stat else 0.0,
         })
     return {
         "map_id": map_id,

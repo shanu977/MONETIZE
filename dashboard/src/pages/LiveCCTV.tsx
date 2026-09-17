@@ -134,8 +134,9 @@ export default function LiveCCTV() {
   const getVideoSourceUrl = () => {
     if (!status?.source) return null
     
+    // DEMO and live both use MJPEG stream (annotated) – fallback to static file if stream unavailable
     if (status.status === "DEMO" || status.mode === "DEMO") {
-      return "/test 1.mp4"
+      return `/api/cctv/stream`
     }
     
     return `/api/cctv/stream`
